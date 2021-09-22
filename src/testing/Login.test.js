@@ -54,23 +54,5 @@ it("should check for invalid username error", async () => {
     const loginButton = screen.getByRole("button", { name: /Login/i })
     fireEvent.click(loginButton)
     // There must be invalid username alert
-    expect(await screen.findByText(/invalid username/i)).toBeInTheDocument()
+    expect(await screen.findByText(/username/i)).toBeInTheDocument()
 })
-// it("should check for invalid password error", async () => {
-//     render(
-//         <TestComponent>
-//             <Login />
-//         </TestComponent>
-//     )
-//     // Finding username input field and giving incorrect username
-//     const usernameInput = screen.getByLabelText("Username")
-//     fireEvent.change(usernameInput, { target: { value: "testuser" } })
-//     // Finding passowrd input field and giving incorrect password
-//     const passwordInput = screen.getByLabelText("Password")
-//     fireEvent.change(passwordInput, { target: { value: "something" } })
-//     // Finding and clicking on login button
-//     const loginButton = screen.getByRole("button", { name: /login/i })
-//     fireEvent.click(loginButton)
-//     // There must be invalid username alert
-//     expect(await screen.findByText(/invalid password/i)).toBeInTheDocument()
-// })
