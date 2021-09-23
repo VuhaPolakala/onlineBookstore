@@ -2,7 +2,7 @@ import React from 'react'
 import HomePage from './HomePage'
 function Home(){
     return(
-        <div>
+        <div className="container-fluid">
         <HomePage/>
         </div>
     )

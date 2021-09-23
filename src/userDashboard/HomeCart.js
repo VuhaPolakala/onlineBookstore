@@ -1,7 +1,7 @@
 import React from 'react'
 function HomeCart(){
     return(
-       <div>
+       <div className="container-fluid">
        HomeCart
       </div>
     )

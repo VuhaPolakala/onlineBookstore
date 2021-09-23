@@ -73,7 +73,7 @@ export const updateRole = createAsyncThunk("updateRole", async ({ user, index },
         return thunkAPI.rejectWithValue(data)
     }
 })
-const initialUserState={
+ export const initialUserState={
      userObj:{}, allUsers:[],
          isSuccess:false,
          isLoading:false,

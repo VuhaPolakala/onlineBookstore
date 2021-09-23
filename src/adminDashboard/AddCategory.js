@@ -21,7 +21,7 @@ function AddCategory({ updateIndex, setUpdateIndex, setShow }){
        
     }
     return(
-        <div className="container-fluid">
+    <div className="container-fluid">
        <form onSubmit={handleSubmit(formSubmit)}>
            <div class="form-floating mb-3" >
                 <input type="text" 
@@ -30,7 +30,7 @@ function AddCategory({ updateIndex, setUpdateIndex, setShow }){
                 placeholder="Category Name" 
                 {...register("category",{required:true})}/>
                 {errors.category?.type === "required" && <p className="alert alert-danger w-50 text-center mx-auto py-2 mt-2">Category Name is required</p>}
-                 <label for="category"></label>
+                 <label for="category">Category Name</label>
             </div>
                <div className="text-center mt-4 mb-5">
                    {

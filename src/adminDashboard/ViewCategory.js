@@ -7,7 +7,7 @@ import {deleteCategory} from '../store/categorySlice'
 function ViewCategory({ setShow, setUpdateIndex }){
 let dispatch=useDispatch()
     const {categories}=useSelector(state=>state.category)
-    console.log("categories",categories)
+   
     return(
         <div className="container-fluid">
             <div className="pe-5 mt-4">

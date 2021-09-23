@@ -15,29 +15,20 @@ const BookTile=({books})=>{
             <div class="row mb-2">
                            
                 <div class="col-6 col-sm-4 col-md-2">
-                <div className="position-relative">
-                <img src={books.bookImage} alt="" width="115px" />
-                    {
-                     books.discount >0 ?
-                     <span className="position-absolute top-0 start-0 translate-middle badge rounded-circle bg-danger p-2">
-                     {books.discount}% <br /> off
-                     <span className="visually-hidden">discount</span>
-                     </span>
-                     : <span className="visually-hidden">discount</span>
-                    }
+                   <div className="position-relative">
+                      <img src={books.bookImage} alt="" width="115px" />
+                       {
+                       books.discount >0 ?
+                       <span className="position-absolute top-0 start-0 translate-middle badge rounded-circle bg-danger p-2">
+                       {books.discount}% <br /> off
+                       <span className="visually-hidden">discount</span>
+                       </span>
+                       : <span className="visually-hidden">discount</span>
+                       }
 
                  
-                 </div>
-                    {/* {books.discount > 0?
-                        <div style={{position:"relative"}}>
-                        <div className="text-white rounded-circle p-1" style={{position:"absolute",right:"0%",backgroundColor:"red",margin:"-10%"}}>{books.discount}%</div>
-                        <img src={books.bookImage} alt=""  width="115px" />
-                        </div>:
-                        <img src={books.bookImage} alt="" width="115px"/>
-  
-                    }
-                           */}
-                          {/* <img src={books.bookImage} className="img-fluid rounded-start" alt="books" />  */}
+                    </div>
+                    
                     
                 </div>
                 <div class="col-6 col-sm-3 col-md-3">

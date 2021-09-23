@@ -290,6 +290,23 @@ function AddBooks({ updateIndex, setUpdateIndex, setShow }){
                                       </div>
                                        {errors.language?.type==='required' && <p className="alert alert-danger">*Language is required</p>}
                                     </div>
+                              
+                               <div className="col-md-6">
+                                    <div class="form-floating ">
+                                        <select class="form-select" aria-label="Default select example" id="floatingInput" placeholder="#" name="tag" {...register("tag", { required: true })}>
+
+                                          <option disabled>-- Tags --</option>
+
+                                          <option value="featured">featured</option>
+                                          <option value="awardwinner">awardwinner</option>
+
+                                       </select>
+                                      
+                                       
+                                         {errors.tag?.type==='required' && <p className="alert alert-danger">*Tag is required</p>}
+                                         <label for="floatingInput">Tags</label>
+                                    </div>
+                                </div>
                                </div>
           
                         <div className="text-center mt-4 mb-2">

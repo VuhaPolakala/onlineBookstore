@@ -4,9 +4,9 @@ import {AiFillInstagram} from 'react-icons/ai'
 import {AiFillTwitterCircle} from 'react-icons/ai'
 function Footer(){
     return(
-        <div className="mt-5">
+      <>
             <footer className="bg-dark text-white">
-            <div className="row">
+            <div className="row mt-5">
                 <div className="col-sm-3 text-center">
                     <ul className="list-unstyled">
                         <li className="hovereffect">COMPANY</li>
@@ -60,7 +60,7 @@ function Footer(){
                 
             
         </footer>
-        </div>
+        </>
     )
 }
 export default Footer;

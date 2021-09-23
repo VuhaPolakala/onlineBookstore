@@ -5,6 +5,7 @@ import Footer from './Footer'
 import Category from './Category'
 import Card from './Card'
 import {useSelector} from 'react-redux'
+import AwardWinner from './AwardWinner'
 import LoadSpinner from '../helpers/LoadSpinnner'
 function HomePage(){
     const {isBooksLoading}=useSelector(state=>state.books)
@@ -25,6 +26,12 @@ function HomePage(){
                 isBooksLoading && <LoadSpinner message="loading the page"/>
                 }
                     <Card/>
+                 </div>
+                <div className="row">
+                {
+                isBooksLoading && <LoadSpinner message="loading the page"/>
+                }
+                    <AwardWinner/>
                         
                </div>
             </div>

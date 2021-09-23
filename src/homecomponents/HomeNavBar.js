@@ -7,6 +7,7 @@ import {RiLoginCircleLine} from 'react-icons/ri';
 import {AiTwotoneHome} from 'react-icons/ai';
 import {AiFillDashboard} from 'react-icons/ai';
 import { BiLogOutCircle} from 'react-icons/bi';
+import { BsFillPersonPlusFill} from 'react-icons/bs';
 import {useForm} from 'react-hook-form'
 import {useHistory} from 'react-router-dom'
 import ResetAllState from '../helpers/ResetAllState'
@@ -50,7 +51,7 @@ function HomeNavBar() {
   
   return (
     
-  <div>
+  <>
       {/* navbar */}
     
        <nav className="navbar navbar-expand-sm navbar-dark bg-danger">
@@ -69,13 +70,13 @@ function HomeNavBar() {
             <>
        
            <li className="nav-item">
-              <NavLink activeStyle={activeLinkStyles} className="nav-link " to="/register">Register</NavLink>
+              <NavLink activeStyle={activeLinkStyles} className="nav-link " to="/register"><BsFillPersonPlusFill/>Register</NavLink>
            </li>
            <li className="nav-item">
               <NavLink activeStyle={activeLinkStyles} className="nav-link " to="/login">Login<RiLoginCircleLine/></NavLink>
            </li>
            <li className="nav-item">
-              <NavLink activeStyle={activeLinkStyles} className="nav-link " to="/contactus ">ContactUs</NavLink>
+              <NavLink activeStyle={activeLinkStyles} className="nav-link " to="/contactus">ContactUs</NavLink>
            </li>
            <form className="d-flex me-5" onSubmit={handleSubmit(onSearchFormSubmit)}>
                <input type="search" name="searchQuery" placeholder="Search by Title,Author,Publisher or Isbn"
@@ -108,6 +109,7 @@ function HomeNavBar() {
                                                     <img src={defaultimage} className="border border-dark rounded-circle" width="50px" alt="" />
                                             }
                                         </a> 
+
                                         <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
                                             <li className="nav-item" ><NavLink exact className="nav-link text-dark" to="/userdashboard/profile" ><AiFillDashboard/> Dashboard</NavLink></li>
                                             <li className="nav-item" ><NavLink exact className="nav-link text-dark" to="/" onClick={ onUserLogOut}><BiLogOutCircle/> Logout</NavLink></li>
@@ -151,7 +153,7 @@ function HomeNavBar() {
       </div>
     </nav>
 
-  </div>
+  </>
 
   );
 }

@@ -29,6 +29,7 @@ let dispatch=useDispatch()
                         <th>Isbn</th>
                         <th>Pages</th>
                         <th>Language</th>
+                        <th>Tag</th>
                         <th>Options</th>
 
                     </tr>
@@ -54,6 +55,7 @@ let dispatch=useDispatch()
                                      <td>{book.isbn}</td>
                                     <td>{book.pages}</td>
                                     <td>{book.language}</td>
+                                    <td>{book.tag}</td>
                                     <td>
                                     <span className="text-success cursor-pointer" onClick={() => { setShow(true); setUpdateIndex(index) }}><FiEdit/></span>
                                         <span className="text-danger cursor-pointer" onClick={() => dispatch(deleteBook({ book,index }))}><MdDelete/></span>

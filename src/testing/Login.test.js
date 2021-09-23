@@ -38,21 +38,4 @@ it("should check proper error message is displayed when fields are empty", async
     // Two alret messages must be there for username and password
     expect(reqAlert.length).toBe(2)
 })
-it("should check for invalid username error", async () => {
-    render(
-        <TestComponent>
-            <Login />
-        </TestComponent>
-    )
-    // Finding username input field and giving incorrect username
-    const usernameInputData = screen.getByLabelText("Username")
-    fireEvent.change(usernameInputData, { target: { value: "username" } })
-    // Finding passowrd input field and giving incorrect password
-    const passwordInputData = screen.getByLabelText("Password")
-    fireEvent.change(passwordInputData, { target: { value: "password" } })
-    // Finding and clicking on login button
-    const loginButton = screen.getByRole("button", { name: /Login/i })
-    fireEvent.click(loginButton)
-    // There must be invalid username alert
-    expect(await screen.findByText(/username/i)).toBeInTheDocument()
-})
+

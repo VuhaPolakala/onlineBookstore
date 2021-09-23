@@ -15,7 +15,7 @@ function Categories(){
                     <AddCategory/>
                 </div>
                 <div className="col-md-6">
-                    <h3 className="text-primary">view Categories</h3>
+                    <h3 className="text-primary">View Categories</h3>
                     <ViewCategory setShow={setShow} setUpdateIndex={setUpdateIndex}/>
                 </div>
                  {/* Edit Category Modal */}

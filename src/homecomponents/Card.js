@@ -18,10 +18,10 @@ let history=useHistory();
 
 return(
         <div className="container-fluid">
-           <h3 className=' text-center mt-2  fonts text-danger'>Books For You</h3> 
+           <h3 className='mt-2 text-danger'> Featured Books For you</h3> 
               <div className=" row row-cols-2 row-cols-md-5 g-5  mt-2">
                  {
-                   books.slice(0,9)
+                   books.filter(books => books.tag==="featured").slice(0,5)
                   .map((books,index)=>{
                   return(
                     
