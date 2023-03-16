@@ -33,7 +33,7 @@ function UserManagement(){
       <div>
           
             <div className="container-fluid">
-            <div className="h4 mt-5">All Users</div>
+            <div className="h4 mt-5 text-center text-danger">All Users</div>
             <div className="table-responsive">
                 <table className="table table-bordered ">
                     <thead className="table-danger">
@@ -47,7 +47,7 @@ function UserManagement(){
                             <th>Created At</th>
                             <th>Last Login</th>
                             <th>Status</th>
-                            <th>Options</th>
+                            <th>Options Available</th>
                         </tr>
                     </thead> 
                     <tbody>
@@ -65,7 +65,7 @@ function UserManagement(){
                                     <td>{user.status}</td>
                                     <td className="text-center">
                                         <span className="text-danger fw-bold cursor-pointer" onClick={() => toggleStatus({ user, index })}>{user.status === "active" ? "Block" : "Unblock"}</span>
-                                        <span className="ms-3 text-danger fw-bold cursor-pointer" onClick={() => toggleRole({ user, index })}>{user.role === "user" ? "Make Admin" : "Make User"}</span>
+                                        <span className="ms-3 text-danger fw-bold cursor-pointer" onClick={() => toggleRole({ user, index })}>{user.role === "user" ? "MakeAdmin" : "MakeUser"}</span>
                                     </td>
                                 </tr>
                             ])

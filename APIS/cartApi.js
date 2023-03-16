@@ -17,7 +17,7 @@ cartApiObj.use((req,res,next)=>{
 
 cartApiObj.post('/addcart',checkToken,expressAsyncHandler(async(req,res)=>{
     let {books,quantity}=req.body;
-    // console.log("cart books",books)
+    
     let username=req.username;
     let userCart= await cartCollection.findOne({username})
     if(userCart){
@@ -49,7 +49,7 @@ cartApiObj.post('/addcart',checkToken,expressAsyncHandler(async(req,res)=>{
 cartApiObj.get("/getcart",checkToken,expressAsyncHandler(async(req,res)=>{
     let username=req.username;
     let items=await cartCollection.findOne({username})
-    //console.log(" cart items",items)
+    
     res.status(200).json({
         status: "success",
         items: items.cart,

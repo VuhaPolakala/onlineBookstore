@@ -8,14 +8,13 @@ import {decrypt} from '../helpers/encryption'
     // if(userCredentialsObj.type==="user"){
     let response=await axios.post('/users/login',{user:userCredentialsObj})
      data=response.data;
-    //console.log("data in userSlice",data)
-    //console.log("userCredentials",userCredentialsObj)
+    
     if(data.message==="success"){
         //save it in localstorage
         localStorage.setItem("token", data.token)
         localStorage.setItem("user", data.user)
         const decryptedUser = decrypt(data.user)
-        //console.log("decryptuser",decryptedUser)
+        
         return decryptedUser
     }
     if(data.message==="Invalid username" || data.message==="Invalid password" || data.message==="Your account is blocked.contact admin to continue shopping"){
@@ -33,7 +32,7 @@ export const updateUser = createAsyncThunk("updateUser", async (formData, thunkA
             Authorization: `Bearer ${token}`
         }
     })
-    console.log("data is",data)
+   
     if (data.status === "success") {
        
         return data.user
@@ -50,7 +49,7 @@ export const getUsers = createAsyncThunk("getUsers", async (_, thunkApi) => {
             Authorization: `Bearer ${token}`
         }
     })
-    console.log("data is",data)
+    
     if (data.status === "success") {
         return data.users
     } else {
@@ -66,7 +65,7 @@ export const updateRole = createAsyncThunk("updateRole", async ({ user, index },
             Authorization: `Bearer ${token}`
         }
     })
-    console.log("data is",data)
+    
     if (data.status === "success") {
         return { user, index }
     } else {
@@ -121,10 +120,9 @@ const userSlice=createSlice({
             state.isLoading = true
         },
         [updateUser.fulfilled]: (state, action) => {
-           console.log("action payload",action.payload)
-            console.log("action payload",action.payload.user)
+           
             state.userObj = { ...state.userObj,...action.payload }
-            console.log("stateuserObj",state.userObj)
+            
             state.isUserLoading = false
             state.isError = ""
         },
@@ -138,7 +136,7 @@ const userSlice=createSlice({
             state.isLoading = true
         },
         [getUsers.fulfilled]: (state, action) => {
-            console.log("action.payload",action.payload)
+           
             state.allUsers=action.payload 
             state.isUserLoading = false
             state.isError = ""

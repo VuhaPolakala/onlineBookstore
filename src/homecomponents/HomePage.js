@@ -13,7 +13,8 @@ function HomePage(){
     <div className="container-fluid">
              
         <div className="row">
-               <div className="col-sm-2 col-md-2">
+            
+               <div className="d-none d-sm-block col-md-2">
                   <Category/>
                </div>
                <div className=" border -start col-sm-10 col-md-10">

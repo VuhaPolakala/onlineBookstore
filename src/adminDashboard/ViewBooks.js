@@ -11,6 +11,7 @@ let dispatch=useDispatch()
         <div className="container-fluid">
             
             <div className="mt-4">
+            <div className="h4 mt-5 text-center text-danger">View Books</div>
             <div className="table-responsive">
             <table className="table table-bordered table-sm ">
                 <thead className="table-danger">

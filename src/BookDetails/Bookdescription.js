@@ -25,9 +25,9 @@ const Bookdescription=({books})=>{
 
         <div className="container-fluid">
            <div className="row">
-                <div className="col-12 col-sm-8 col-md-8">
+                <div className="col-12  col-md-8 col-lg-10">
                     <div class="row mb-2"> 
-                        <div class="col-6 col-sm-3 col-md-3">
+                        <div class="col-6 col-sm-3 col-md-2">
                            <div className="position-relative">
                                <img src={books.bookImage} className="img-fluid rounded-start" alt="books" />
                                 {
@@ -41,7 +41,7 @@ const Bookdescription=({books})=>{
                             </div>
                         </div>
                             {/* </span> */}
-                        <div class="col-12 col-sm-3 col-md-3">
+                        <div class="col-12 col-sm-4 col-md-3">
                             <h5 className="" style={{fontSize:"150%"}}><strong>{books.bookTitle}</strong></h5>
                             <p className="" style={{fontSize:"120%",margin:"0px",padding:"0px"}}><strong>Author: </strong>{books.author}</p>
                             <p className="" style={{fontSize:"120%",margin:"0px",padding:"0px"}}><strong>Publisher: </strong>{books.publisher}</p>
@@ -55,7 +55,7 @@ const Bookdescription=({books})=>{
                              }
                         </div>
               
-                       <div class="col-12 col-sm-4 col-md-6">
+                       <div class="col-12 col-sm-4 col-md-7">
                           <h6 style={{fontSize:"120%",margin:"0px",padding:"0px"}} className="text-success"><strong>Available</strong></h6>
                           <p style={{fontSize:"120%",margin:"0px",padding:"0px"}}>Ships within 3-4 Days</p>
                            <p style={{fontSize:"120%",margin:"0px",padding:"0px"}}>₹50 shipping in India per item and low cost Worldwide</p>
@@ -96,7 +96,7 @@ const Bookdescription=({books})=>{
        
                  </div>
             </div>
-            <div class=" border-start  col-md-4 col-lg-3">
+            <div class=" border-start col-md-4 d-none d-md-block col-lg-2">
                 <BooksRightSide recentlyViewed={recentlyViewed}/>
             </div>
         </div>

@@ -7,7 +7,7 @@ const BooksSideBarStip = ({ title, books }) => {
         <>
             <div className="ms-0 mt-0">
                 <div className="h3 ms-5">{title}</div>
-                <div className="d-flex flex-column">
+                <div className="">
                     {
                         books.map(books => (
                             <BookSideBar books={books} />

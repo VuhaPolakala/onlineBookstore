@@ -59,7 +59,7 @@ function AddBooks({ updateIndex, setUpdateIndex, setShow }){
     return(
        <div className="container-fluid">
            <div className="row mt-5">
-           
+           <div className="h4 mt-1 text-center text-danger">Add Book</div>
            
               <form className="" onSubmit={handleSubmit(onBookFormSubmit)} >
                     <div className="row mb-3 ms-1 me-2">
@@ -214,7 +214,7 @@ function AddBooks({ updateIndex, setUpdateIndex, setShow }){
 
                                        <select class="form-select" aria-label="Default select example" id="floatingInput" placeholder="#" name="category" {...register("category", { required: true })}>
 
-                                            <option disabled>-- Category --</option>
+                                            <option selected>-- Category --</option>
 
                                             {
 
@@ -295,7 +295,7 @@ function AddBooks({ updateIndex, setUpdateIndex, setShow }){
                                     <div class="form-floating ">
                                         <select class="form-select" aria-label="Default select example" id="floatingInput" placeholder="#" name="tag" {...register("tag", { required: true })}>
 
-                                          <option disabled>-- Tags --</option>
+                                          <option selected>-- Tags --</option>
 
                                           <option value="featured">featured</option>
                                           <option value="awardwinner">awardwinner</option>

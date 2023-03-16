@@ -35,7 +35,7 @@ function AdminProfileData(){
     
 
     const updatedFormSubmit = EditedData => {
-        console.log("edited data",EditedData)
+       
         //Creating formData object
         const formData = new FormData()
 

@@ -50,7 +50,7 @@ function Login(){
                 <div className="col-11 col-sm-8 col-md-6 mx-auto">
                     <div className="card w-75 mx-auto shadow mb-5">
                         <div className="card-body">
-                            <h3 className="text-center">Login</h3>
+                            <h3 className="text-center text-danger">Login</h3>
                             <form className="" onSubmit={handleSubmit(onLoginFormSubmit)}>
                                 {/* username */}
                                 <div class="form-floating mb-3">

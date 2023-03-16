@@ -17,7 +17,7 @@ const Cart=()=>{
     let [totalItems,setTotalItems]=useState(0);
     let [totalprice,setTotalPrice]=useState(0);
     let [discountprice,setDiscountPrice]=useState(0);
-    console.log("cart items are",cart)
+   
     
         useEffect(() => {
         if (cart.length) {

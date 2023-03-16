@@ -28,8 +28,6 @@ userApiObj.post('/register',expressAsyncHandler(async(req,res)=>{
     //get user from req.body
     //get userObj
     let newUser=req.body;
-    // console.log("newUser",newUser)
-    // Decrypting the user object
    
     
     
@@ -91,7 +89,7 @@ userApiObj.post('/login',expressAsyncHandler(async(req,res)=>{
         // Adding Current time
         await userCollection.updateOne({ username: user.username }, { $set: { lastLogin: new Date().toLocaleString() } }, { upsert: true })
           //create a token
-        let signedToken= await jwt.sign({username:user.username},process.env.SECRET,{expiresIn:3000})
+        let signedToken= await jwt.sign({username:user.username},process.env.SECRET,{expiresIn:"10d"})
         user = encrypt(user)
         //send token in res
         res.send({message:"success",token:signedToken,user:user})
@@ -142,7 +140,7 @@ userApiObj.put("/update", checkToken, multerObj.single("profilePicture"), expres
 userApiObj.get("/getAllUsers",checkToken,expressAsyncHandler(async(req,res)=>{
     
     let usersDb= await userCollection.find().toArray()
-    //console.log("userDb",usersDb)
+    
     res.status(200).json({
         status:"success",
         message:"user role updated",
@@ -152,7 +150,7 @@ userApiObj.get("/getAllUsers",checkToken,expressAsyncHandler(async(req,res)=>{
 // Update user role
 userApiObj.put("/changeRole", checkToken, expressAsyncHandler(async (req, res) => {
     const user = req.body
-    //console.log("user updated state",user)
+   
     if (user.status) {
        if(user.status === "blocked")
         {

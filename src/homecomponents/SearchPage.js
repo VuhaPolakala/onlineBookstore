@@ -8,7 +8,7 @@ const SearchPage=()=>{
     
 
     const query = useQuery().get("query").toLowerCase()
-    //console.log("query is",query);
+    
 
 
     const {books}=useSelector(state=>state.books)

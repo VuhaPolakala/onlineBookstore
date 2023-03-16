@@ -8,9 +8,9 @@ const BookSideBar=({books})=>{
     return(
         
             
-           <div className="container-fluid">
+           <div className="">
             
-               <div className="card h-100 m-3 shadow " >
+               <div className="card  m-3 shadow " >
                     
                          {
                           books.discount >0 ?

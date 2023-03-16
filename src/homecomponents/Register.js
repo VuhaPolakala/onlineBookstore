@@ -11,11 +11,9 @@ function Register(){
     
     //     //when form submitted
      const onRegisterFormSubmit = async (userObj) => {
-        //   userObj.role="user";
-        //   userObj.address="";
-        //   userObj.status="active";
         
-        console.log("userObj",userObj)
+        
+       
         //make http post req
          if(userObj.password===userObj.conformpassword){
          delete userObj.conformpassword;
@@ -44,7 +42,7 @@ function Register(){
             {/* user register status */}
             <p className="display-2 text-center text-danger">{userRegisterStatus}</p>
             <p className="display-2 text-center text-danger">{passwordMatch}</p>
-            <h3 className="text-center">Register</h3>
+            <h3 className="text-center text-danger">Register</h3>
            <form className="col-11 col-sm-6 col-md-5 mx-auto" onSubmit={handleSubmit(onRegisterFormSubmit)}>
           
                     {/* username */}

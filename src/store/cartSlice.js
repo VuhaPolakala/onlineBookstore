@@ -8,7 +8,7 @@ import axios from 'axios'
             Authorization: `Bearer ${token}`
         }
     })
-    console.log("error data is",data)
+    
     if (data.status === "success") {
         return thunkApi.fulfillWithValue(booksQuantity)
     } else {
@@ -55,7 +55,7 @@ export const deleteCartItem=createAsyncThunk('deleteCartItem',(async(cartItemInd
             Authorization: `Bearer ${token}`
         }
     })
-    console.log("delete data is",data)
+    
     if (data.status === "success") {
         return thunkApi.fulfillWithValue(cartItemIndex.index)
     } else {

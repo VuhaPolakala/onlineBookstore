@@ -14,11 +14,13 @@ import ResetAllState from '../helpers/ResetAllState'
 import defaultimage from '../media/defaultimage.png'
 import {useState,useEffect} from 'react'
 import {loadCart} from '../store/cartSlice'
+import {getCategories} from "../store/categorySlice";
 function HomeNavBar() {
    const {cart}=useSelector(state=>state.cart)
    const {userObj,isSuccess}=useSelector(state=>state.user)
-    
+   let {categories,categoryCount,isCategoryLoading}=useSelector(state=>state.category)
    const [totalItems,setTotalItems]=useState(0);
+   
    
    useEffect(() => {
     if (cart.length) {
@@ -29,6 +31,7 @@ function HomeNavBar() {
       setTotalItems(0)
     }
   }, [cart]);
+  
 
   let {register,handleSubmit}=useForm();
   const history=useHistory()
@@ -54,7 +57,7 @@ function HomeNavBar() {
   <>
       {/* navbar */}
     
-       <nav className="navbar navbar-expand-sm navbar-dark bg-danger">
+       <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
        <a className="navbar-brand ms-5 logo" href="#"><ImBooks/><span>Book Store</span></a>
     
       {/* collapsable button */}
@@ -75,6 +78,33 @@ function HomeNavBar() {
            <li className="nav-item">
               <NavLink activeStyle={activeLinkStyles} className="nav-link " to="/login">Login<RiLoginCircleLine/></NavLink>
            </li>
+           
+           <li className="nav-item">
+              <NavLink activeStyle={activeLinkStyles} className="nav-link " to="/home">Home</NavLink>
+           </li>
+           <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Category
+          </a>
+          
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink"> {
+            categories.map((category,index)=>{
+                return(
+                    <div key={index}>
+                    
+                    <NavLink activeStyle={activeLinkStyles} className="nav-link" to={`/${category.category}`} aria-current="true">{category.category}</NavLink>
+
+                   
+                 </div>
+                )
+            })
+          }
+        </ul>
+        
+        </li>
+      </ul>
+           
            <li className="nav-item">
               <NavLink activeStyle={activeLinkStyles} className="nav-link " to="/contactus">ContactUs</NavLink>
            </li>
@@ -95,6 +125,28 @@ function HomeNavBar() {
                  <li className="nav-item">
                      <NavLink activeStyle={activeLinkStyles} className="nav-link text-decoration-none position-relative" to="/cart"><FaCartArrowDown/>Cart <span class=" ms-2 badge bg-secondary">{totalItems}</span></NavLink>
                  </li>
+                 <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorys
+          </a>
+          
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink"> {
+            categories.map((category,index)=>{
+                return(
+                    <div key={index}>
+                    
+                    <NavLink activeStyle={activeLinkStyles} className="nav-link" to={`/${category.category}`} aria-current="true">{category.category}</NavLink>
+
+                   
+                 </div>
+                )
+            })
+          }
+        </ul>
+        
+        </li>
+      </ul>
                                  <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         

@@ -12,11 +12,11 @@ function BooksBasedCategory(){
         <div className="container-fluid">
             <div className="row">
                 {/* category sidebar */}
-                <div className="col-2 d-none d-sm-block">
+                <div className=" d-none d-sm-block col-md-2">
                     <Category/>
                 </div>
                 {/* main content */}
-                <div className="col-10 border-start mt-2 mb-2 ps-2">
+                <div className="col-sm-9 border-start mt-2 mb-2 ps-2">
                     <div className="display-4 mt-5">{category} Books</div>
                     <div className="mt-3 mb-5">{books.filter(books=>books.category === category).length} books found</div>
                         {

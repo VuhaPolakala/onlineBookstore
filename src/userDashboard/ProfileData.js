@@ -35,7 +35,7 @@ function ProfileData(){
     
 
     const updatedFormSubmit = EditedData => {
-        console.log("edited data",EditedData)
+        
         //Creating formData object
         const formData = new FormData()
 
@@ -63,7 +63,7 @@ function ProfileData(){
           <div className="row">
              <div className="col-12 col-md-8 ps-5 border-end">
               <p className="h3">Welcome {userObj.username}</p>
-              <p className="h4 mt-2">Edit your profile</p>
+              <p className="h4 mt-2 text-center">Edit your profile</p>
               <p className="text-success">{ isSuccess}</p>
               <div className="text-center mt-4">
                             {
@@ -162,9 +162,7 @@ function ProfileData(){
               <div className="row">
                   <div className="col-10 text-center">
                      <p className=" text text-danger mx-auto">{isError}</p>
-                       {/* {
-                         isLoading && <LoadSpinner message="Saving Changes"/>
-                       } */}
+                       
                      <button className="btn btn-danger mx-auto" type="submit">Save</button>
                                    
                   </div>

@@ -17,7 +17,7 @@ wishlistApiObj.use((req,res,next)=>{
 
 wishlistApiObj.post('/addwishlist',checkToken,expressAsyncHandler(async(req,res)=>{
     let {books}=req.body;
-     console.log("cart books",books)
+    
     let username=req.username;
    
         await wishlistCollection.updateOne({ username }, { $addToSet: { wishlist: books } }, { upsert: true })
@@ -26,7 +26,7 @@ wishlistApiObj.post('/addwishlist',checkToken,expressAsyncHandler(async(req,res)
             message: "item added"
         })
 
-// Inserting new cart if username doesn't exists
+
     
 
 }))
@@ -38,7 +38,7 @@ wishlistApiObj.post('/addwishlist',checkToken,expressAsyncHandler(async(req,res)
 wishlistApiObj.get("/getwishlist",checkToken,expressAsyncHandler(async(req,res)=>{
     let username=req.username;
     let items=await wishlistCollection.findOne({username})
-    console.log(" wihlist items",items)
+   
     res.status(200).json({
         status: "success",
         items: items.wishlist,

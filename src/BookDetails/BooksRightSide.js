@@ -20,7 +20,7 @@ function BooksRightSide({recentlyViewed}){
     return(
 
         
-        <div className="container-fluid    mt-2">
+        <div className=" mt-2">
                     {/* similar books */}
                 <BooksSideBarStip books={similarBooks} title="similarBooks"/>
                  {/* Recently Viewed Books */}

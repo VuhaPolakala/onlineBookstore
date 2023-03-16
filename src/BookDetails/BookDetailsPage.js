@@ -15,7 +15,7 @@ function BooksDetailsPage(){
    
    
     return(
-        <div className="container-fluid">
+        <div className="">
             <div class="row">
                 
                 {/* main content */}

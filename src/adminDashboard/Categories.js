@@ -11,11 +11,11 @@ function Categories(){
         <div className="container-fluid">
             <div className="row">
                 <div className="col-md-6">
-                    <h3 className="text-primary">Add New Category</h3>
+                    <h3 className="text-danger">Add New Category</h3>
                     <AddCategory/>
                 </div>
                 <div className="col-md-6">
-                    <h3 className="text-primary">View Categories</h3>
+                    <h3 className="text-danger">View Categories</h3>
                     <ViewCategory setShow={setShow} setUpdateIndex={setUpdateIndex}/>
                 </div>
                  {/* Edit Category Modal */}

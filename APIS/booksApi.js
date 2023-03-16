@@ -27,7 +27,7 @@ booksApiObj.post("/addbooks", checkToken,multerObj.single('bookImage'), expressA
     const bookObj=JSON.parse(req.body.books)
     //add image CDN link to productObj
     bookObj.bookImage=req.file.path;
-    console.log("new book is",bookObj)
+    
     await booksCollection.insertOne(bookObj)
     res.status(201).json({
         status: "success",
@@ -38,7 +38,7 @@ booksApiObj.post("/addbooks", checkToken,multerObj.single('bookImage'), expressA
 // Delete book
 booksApiObj.post("/removeBook", checkToken, expressAsyncHandler(async (req, res) => {
     const book= req.body
-   // console.log("deleted category",category)
+   
     await booksCollection.deleteOne({ isbn: book.isbn })
     res.status(200).json({
         status: "success",
@@ -50,7 +50,7 @@ booksApiObj.post("/removeBook", checkToken, expressAsyncHandler(async (req, res)
 // Update a book
 booksApiObj.post("/editBook", checkToken, multerObj.single("bookImage"), expressAsyncHandler(async (req, res) => {
     const book = JSON.parse(req.body.books)
-    console.log(" updated book is",book)
+    
     if (req.file) {
         book.bookImage = req.file.path
     }
