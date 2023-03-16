@@ -85,7 +85,7 @@ function HomeNavBar() {
            <ul class="navbar-nav">
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Category
+            Categoryss
           </a>
           
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink"> {
